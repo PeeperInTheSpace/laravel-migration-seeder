@@ -25,9 +25,9 @@ class TrainsTableSeeder extends Seeder
             $train->stazione_arrivo = $faker->city();
             $train->orario_partenza = $faker->time();
             $train->orario_arrivo = $faker->time();
-            $randomDate = $faker->date();
-            $train->data_partenza = $faker->$randomDate;
-            $train->data_arrivo = $faker->$randomDate;
+            $randomDate = $faker->date('Y-m-d H:i:s');
+            $train->data_partenza = $randomDate;
+            $train->data_arrivo = $randomDate;
             $train->codice_treno = $tempCode . $i;
             $train->save();
 
